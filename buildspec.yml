@@ -1,11 +1,17 @@
 version: 0.2
 
 phases:
+  install:
+    runtime-versions:
+      dotnet: 8.0
+  pre_build:
+    commands:
+      - dotnet restore
   build:
     commands:
-      - echo Build started
+      - dotnet publish -c Release -o ./output
 
 artifacts:
   files:
-    - index.cshtml
-  base-directory: Pages
+    - "**/*"
+  base-directory: output
