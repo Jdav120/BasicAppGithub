@@ -1,17 +1,11 @@
 version: 0.2
 
 phases:
-  install:
-    runtime-versions:
-      dotnet: 8.0
-  pre_build:
-    commands:
-      - dotnet restore
   build:
     commands:
-      - dotnet publish -c Release -o ./output
+      - echo Build started
 
 artifacts:
   files:
-    - "**/*"
-  base-directory: output
+    - index.cshtml
+  discard-paths: yes
