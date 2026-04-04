@@ -7,5 +7,5 @@ phases:
 
 artifacts:
   files:
-    - index.cshtml
+    - index.html
   discard-paths: yes
